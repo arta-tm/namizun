@@ -94,7 +94,7 @@ install_dependencies() {
 
     echo 'Pulling the repository (step 3)'
     git init
-    git remote add origin https://github.com/malkemit/namizun.git
+    git remote add origin https://github.com/arta-tm/namizun.git
     git pull origin master
     if [ $? != 0 ]; then
       echo 'could not clone the repository'
@@ -108,7 +108,7 @@ install_dependencies() {
     fi
 
     echo 'Installing project dependencies (step 5)'
-    cd /var/www/namizun && source /var/www/namizun/venv/bin/activate && pip install wheel && pip install namizun_core/ namizun_menu/ && deactivate
+    cd /var/www/namizun && source /var/www/namizun/venv/bin/activate && pip install --upgrade pip && pip install wheel && pip install namizun_core/ namizun_menu/ && deactivate
     if [ $? != 0 ]; then
       echo "Dependencies doesn't installed correctly"
       exit
