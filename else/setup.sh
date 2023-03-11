@@ -71,6 +71,7 @@ install_dependencies() {
             apt install -y python3-pip python3-venv redis git 
 
         elif [[ "$os" = "centos" ]]; then
+            yum install epel-release -y
             yum install -y python3-pip python3-venv redis git 
         else
             # Else, OS must be Fedora
